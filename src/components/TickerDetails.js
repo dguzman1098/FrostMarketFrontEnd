@@ -22,7 +22,7 @@ const TickerDetails = () => {
     return (
         <div>
             <Header />
-            <h1>Stock News</h1>
+            <h1>Stock Details</h1>
 
             <div>
                 <form action={`/home/ticker-details/${query}`} method="get" className="mt-5">
@@ -52,32 +52,66 @@ const TickerDetails = () => {
                 <Card className=' col-sm-3 mt-5 mb-5' style={cardStyle}
                 >
                     <CardBody >
-                        <CardTitle tag="h5">
+                        <CardTitle tag="h5" className='text-center'>
                             <p>{jsonData.name}</p>
-                            <a href={jsonData.name}>
-                                <img src={jsonData.name} width={"75%"}></img>
-                            </a>
-
                         </CardTitle>
                         <CardSubtitle
-                            className="mb-3"
+                            className="mb-3 text-center"
                             tag="h6"
                             style={{ borderTop: '1px solid black', color: 'black' }}
 
                         >
                             <br />
-                            {jsonData.country}
+
+                            <b>CEO:</b> {jsonData.ceo}
                             <br />
 
                         </CardSubtitle>
                         <CardText style={{ backgroundColor: 'SKYBLUE', color: 'black', padding: '10px' }}>
-                            {jsonData.name}
+                            <ul style={{ listStyleType: 'none' }}>
+                                <p>
+                                    <li><b>Country:</b> {jsonData.country}</li>
+                                </p>
+                                <p>
+                                    <li><b>Description:</b> {jsonData.description}</li>
+
+                                </p>
+                                <p>
+                                    <li><b>Number of Employees</b>{jsonData.employees}</li>
+
+                                </p>
+                                <p>
+                                    <li><b>Exchange: </b>{jsonData.exchange}</li>
+
+                                </p>
+                                <p>
+                                    <li><b>First Listed On: </b>{jsonData.listdate}</li>
+
+                                </p>
+                                <p>
+                                    <li><b>Market Cap: $</b>{jsonData.marketcap}</li>
+
+                                </p>
+                                <p>
+                                    <li><b>Company Phone: </b>{jsonData.phone}</li>
+                                </p>
+                                <p>
+                                    <li><b>Sector: </b>{jsonData.sector}</li>
+
+                                </p>
+                                <p>
+                                    <li><b>Number of Employees:</b>{jsonData.employees}</li>
+
+                                </p>
+                                <p>
+                                    <li><b>Company Website: </b>{jsonData.url}</li>
+                                </p>
+
+
+                            </ul>
+
                         </CardText>
-                        <Button style={{ backgroundColor: 'white' }}>
-                            <a href={jsonData.name}>
-                                Click To Read More
-                            </a>
-                        </Button>
+
                     </CardBody>
                 </Card>
 
@@ -91,9 +125,11 @@ export default TickerDetails
 
 const cardStyle = {
     color: "white",
-    backgroundColor: "Orange",
+    backgroundColor: "slategray",
     padding: "10px",
     fontFamily: "Arial",
-    margin: "10px"
+    margin: "10px",
+    width: "100%",
+    textAlign: 'left'
 
 };

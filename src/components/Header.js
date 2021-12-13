@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { Navbar, NavbarBrand, NavbarToggler, Collapse, Nav, NavItem, NavLink, UncontrolledDropdown, DropdownToggle, DropdownMenu, DropdownItem, } from 'reactstrap'
-import {GiIceBolt} from'react-icons/gi'
+import { GiIceBolt } from 'react-icons/gi'
 
 const Header = () => {
     return (
@@ -19,10 +19,10 @@ const Header = () => {
                 color="info"
                 expand="md"
                 fixed="top"
-                
+
             >
                 <NavbarBrand href="/home">
-                <GiIceBolt size={'2em'} className='m-2'/>
+                    <GiIceBolt size={'2em'} className='m-2' />
                     FROSTMARKET
                 </NavbarBrand>
                 <NavbarToggler onClick={function noRefCheck() { }} />
@@ -36,7 +36,12 @@ const Header = () => {
                                 ETFs
                             </NavLink>
                         </NavItem>
-                        
+                        <NavItem>
+                            <NavLink href="/home/ticker-details">
+                                Stock Details
+                            </NavLink>
+                        </NavItem>
+
                         <UncontrolledDropdown
                             inNavbar
                             nav
@@ -51,11 +56,6 @@ const Header = () => {
                                 <DropdownItem>
                                     <NavLink href="/home/stock-charts">
                                         View Stock Charts
-                                    </NavLink>
-                                </DropdownItem>
-                                <DropdownItem>
-                                    <NavLink href="/home/ticker-details">
-                                        Stock Details
                                     </NavLink>
                                 </DropdownItem>
                                 <DropdownItem>
