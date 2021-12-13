@@ -1,4 +1,4 @@
-<Passion Project> Full Stack Application
+Passion Project | Full Stack Application
   
   SpringBoot -> MySQL -> React JS
   
