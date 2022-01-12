@@ -17,7 +17,7 @@ const Login = () => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        createAUser();
+        createAUser(user);
         alert(`Your state values: \n 
                 email: ${user.email} \n 
                 You can replace this alert with your process`);
@@ -39,7 +39,7 @@ const Login = () => {
         <div >
 
             <div className='container' style={{ display: 'flex', justifyContent: 'center' }}>
-                <Card style={{ backgroundColor: 'pink', paddingBottom: '25px' }} >
+                <Card style={{ backgroundColor: 'skyblue', paddingBottom: '25px' }} >
                     <CardTitle style={{ margin: '50px' }}>
                         <h2>WELCOME TO FROSTMARKET</h2>
                     </CardTitle>
@@ -88,8 +88,8 @@ const Login = () => {
                             Check me out
                         </Label>
                         <br />
-                        <Button type='submit' style={{ margin: '10px', backgroundColor: 'lightgreen' }} >
-                            <Link to="/home">
+                        <Button className='button'  type='submit' style={{ margin: '10px', backgroundColor: 'lightgreen' }} >
+                            <Link name="link" to="/home">
                                 Sign in
                             </Link>
 

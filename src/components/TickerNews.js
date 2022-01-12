@@ -58,7 +58,7 @@ const AllTickersComponent = () => {
 
 
             <div style={{
-                display: 'flex', flex: 1,
+                display: 'flex', flex: "25%",
                 flexDirection: 'row',
                 flexWrap: 'wrap',
                 margin: "10px",
@@ -141,4 +141,5 @@ const cardStyle = {
     margin: "10px"
 
 };
+
 

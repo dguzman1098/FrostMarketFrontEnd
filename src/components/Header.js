@@ -30,6 +30,7 @@ const Header = () => {
                     <Nav
                         className="me-auto"
                         navbar
+                        style={{fontSize: '18px'}}
                     >
                         <NavItem>
                             <NavLink href="/home/tickers">

@@ -16,7 +16,6 @@ const Footer = () => {
 
                            <GoMarkGithub/> Github
                         </NavLink>
-                    
                     Created by Diego Guzman
                 </Navbar>
             </footer>

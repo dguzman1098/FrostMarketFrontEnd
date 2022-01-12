@@ -14,6 +14,7 @@ import 'reactstrap'
 import ViewTickerData from './components/ViewTickerData';
 import SingleTickerNews from './components/SingleTickerNews';
 import TickerDetails from './components/TickerDetails';
+import SingleTickerDetails from './components/SingleTickerDetails';
 
 const App = () => {
 
@@ -31,6 +32,7 @@ const App = () => {
         <Route exact path="/home/stock-charts" element={<StockChart />}/>
         <Route exact path="/home/ticker-news/:name" element={<SingleTickerNews />}/>
         <Route exact path="/home/ticker-details" element={<TickerDetails />}/>
+        <Route exact path="/home/ticker-details/:name" element={<SingleTickerDetails />}/>
       </Routes>
       </div>
       

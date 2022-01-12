@@ -1,38 +1,34 @@
-import React, { useEffect, useState } from 'react'
-import TickerDetailsService from '../services/TickerDetailsService';
-import Header from './Header';
+import React, { useState, useEffect } from 'react'
+import TickerNewsService from '../services/TickerNewsService';
+import { Link, useParams, useNavigate } from 'react-router-dom'
 import { Card, CardBody, CardTitle, CardSubtitle, CardText, Button } from 'reactstrap'
+import Header from './Header'
+import TickerDetailsService from '../services/TickerDetailsService';
 
-const TickerDetails = () => {
-    const [jsonData, setjsonData] = useState([]);
+const SingleTickerDetails = () => {
+    const [jsonData, setJsonData] = useState([]);
     const [query, setQuery] = useState("");
 
+    const { name } = useParams();
+
     useEffect(() => {
-        fetchDefaultTickerDetails();
+        getTickerDetails();
     }, [])
 
-    const fetchDefaultTickerDetails = () => {
 
-        TickerDetailsService.getDefaultTickerDetails().then((response) => {
+
+    const getTickerDetails = () => {
+        TickerDetailsService.getSingleTickerDetails(name).then((response) => {
+            setJsonData(response.data);
             console.log(response.data);
-            setjsonData(response.data);
         })
     }
-
-    const fetchTickerDetails = () => {
-
-        TickerDetailsService.getDefaultTickerDetails(query).then((response) => {
-            console.log(response.data);
-            setjsonData(response.data);
-        })
-    }
-
     return (
-        <div>
+        <div >
             <Header />
             <h1>Stock Details</h1>
 
-            <div>
+            <div >
                 <form action={`/home/ticker-details/${query}`} method="get" className="mt-5">
                     <label htmlFor="header-search">
                         <span className="visually-hidden">Search Stocks Information</span>
@@ -44,7 +40,7 @@ const TickerDetails = () => {
                         onChange={(e) => setQuery(e.target.value)}
 
                     />
-                    <button onClick={fetchTickerDetails} type="submit">Search</button>
+                    <button onClick={getTickerDetails} type="submit">Search</button>
                 </form>
             </div>
 
@@ -129,8 +125,9 @@ const TickerDetails = () => {
     )
 }
 
-export default TickerDetails
+export default SingleTickerDetails
 
+//Card Style Code
 const cardStyle = {
     color: "white",
     backgroundColor: "slategray",

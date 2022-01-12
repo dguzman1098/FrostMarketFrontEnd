@@ -14,8 +14,6 @@ const SingleTickerNews = () => {
         getTickerNews();
     }, [])
 
-
-
     const getTickerNews = () => {
         TickerNewsService.getAllTickersNews(name).then((response) => {
             setJsonData(response.data.results);
